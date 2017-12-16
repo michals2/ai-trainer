@@ -15,10 +15,18 @@ const ModelCreatorProgress = props => {
         <Step title="Train Model" />
       </Steps>
       <ButtonGroup>
-        <Button type="primary" onClick={props.actions.decrementStep}>
+        <Button
+          type="primary"
+          onClick={props.actions.decrementStep}
+          disabled={props.state.prevButtonDisabled}
+        >
           <Icon type="left" />Previous
         </Button>
-        <Button type="primary" onClick={props.actions.incrementStep}>
+        <Button
+          type="primary"
+          onClick={props.actions.incrementStep}
+          disabled={props.state.nextButtonDisabled}
+        >
           Next<Icon type="right" />
         </Button>
       </ButtonGroup>
