@@ -10,22 +10,16 @@ const ModelCreator = props => {
   console.log({ props });
   return (
     <div style={{ height: 500 }}>
-      <Steps progressDot current={0} style={{ width: 600 }}>
+      <Steps progressDot current={props.state.step} style={{ width: 600 }}>
         <Step title="Finished" description="This is a description." />
         <Step title="In Progress" description="This is a description." />
         <Step title="Waiting" description="This is a description." />
       </Steps>
       <ButtonGroup>
-        <Button
-          type="primary"
-          onClick={props.modelCreatorActions.decrementStep}
-        >
+        <Button type="primary" onClick={props.actions.decrementStep}>
           <Icon type="left" />Previous
         </Button>
-        <Button
-          type="primary"
-          onClick={props.modelCreatorActions.incrementStep}
-        >
+        <Button type="primary" onClick={props.actions.incrementStep}>
           Next<Icon type="right" />
         </Button>
       </ButtonGroup>

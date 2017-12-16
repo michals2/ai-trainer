@@ -1,3 +1,3 @@
 export default {
-  step: 1
+  step: 0
 };

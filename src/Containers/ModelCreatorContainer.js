@@ -8,12 +8,12 @@ import * as modelCreatorActions from "Model/actions/modelCreatorActions";
 import ModelCreator from "Components/ModelCreator/ModelCreator";
 
 function mapStateToProps(state) {
-  return { modelCreatorState: state.modelCreator };
+  return { state: state.modelCreator };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    modelCreatorActions: bindActionCreators(modelCreatorActions, dispatch)
+    actions: bindActionCreators(modelCreatorActions, dispatch)
   };
 }
 
