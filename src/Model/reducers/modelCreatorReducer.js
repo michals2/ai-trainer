@@ -1,17 +1,23 @@
-import initialState from "./../store/initialState";
+import initialModelCreatorState from "./../store/initialModelCreatorState";
 import { INCREMENT_STEP, DECREMENT_STEP } from "../actions/actionTypes";
 
-const { Map } = require("immutable");
+// const { Map } = require("immutable");
 
-export default (state = initialState, action) => {
-  let imState = Map(state);
+export default (state = initialModelCreatorState, action) => {
+  // let imState = Map(state);
 
   switch (action.type) {
     case INCREMENT_STEP:
-      return imState.modelCreator.set(state.modelCreator.step + 1).toObject;
+      return {
+        ...state,
+        step: state.step + 1
+      };
 
     case DECREMENT_STEP:
-      return imState.modelCreator.set(state.modelCreator.step - 1).toObject;
+      return {
+        ...state,
+        step: state.step - 1
+      };
 
     default:
       return state;

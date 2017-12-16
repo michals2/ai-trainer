@@ -16,10 +16,16 @@ const ModelCreator = props => {
         <Step title="Waiting" description="This is a description." />
       </Steps>
       <ButtonGroup>
-        <Button type="primary">
+        <Button
+          type="primary"
+          onClick={props.modelCreatorActions.decrementStep}
+        >
           <Icon type="left" />Previous
         </Button>
-        <Button type="primary">
+        <Button
+          type="primary"
+          onClick={props.modelCreatorActions.incrementStep}
+        >
           Next<Icon type="right" />
         </Button>
       </ButtonGroup>
