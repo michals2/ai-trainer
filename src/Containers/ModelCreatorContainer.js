@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import * as modelCreatorActions from "Model/actions/modelCreatorActions";
 
 // View imports
-import ModelCreator from "Components/ModelCreator/ModelCreator";
+import ModelCreator from "Components/ModelCreator";
 
 function mapStateToProps(state) {
   return { state: state.modelCreator };

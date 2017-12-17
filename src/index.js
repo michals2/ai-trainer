@@ -15,7 +15,7 @@ import createHistory from "history/createBrowserHistory";
 import configureStore from "Model/store/configureStore";
 
 /* View imports */
-import App from "Components/App/App";
+import App from "Components/App";
 
 const history = createHistory();
 const store = configureStore(history);

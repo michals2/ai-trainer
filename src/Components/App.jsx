@@ -1,13 +1,13 @@
 /* Library Imports */
 import React from "react";
 import { Layout, Menu } from "antd";
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
 
 /* Container/View Imports */
 import ModelCreatorContainer from "Containers/ModelCreatorContainer";
-import Home from "Components/Home/Home";
-import AppHeader from "Components/AppHeader/AppHeader";
+import Home from "Components/Home";
+import AppHeader from "Components/AppHeader";
 
 /* Destructuring */
 const { Header, Content, Footer } = Layout;
@@ -20,8 +20,14 @@ const App = () =>
       </Header>
       <Content style={{ margin: "60px", overflow: "initial" }}>
         <div style={{ padding: 40, background: "#fff" }}>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/ModelCreator" component={ModelCreatorContainer} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/ModelCreator"
+              component={ModelCreatorContainer}
+            />
+          </Switch>
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>Created by Luke Michals</Footer>
