@@ -2,8 +2,9 @@ export const myModelsInitialState = {
   models: []
 };
 
-export const modelCreatorInitialState = {
+export const modelCreatorProgressInitialState = {
   step: 0,
   prevButtonDisabled: true,
   nextButtonDisabled: false
 };
+

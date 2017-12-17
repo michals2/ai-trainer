@@ -5,10 +5,10 @@ import { bindActionCreators } from "redux";
 import * as modelCreatorProgressActions from "Model/actions/modelCreatorProgressActions";
 
 // View imports
-import Component from "Components/...";
+import ModelCreatorProgress from "Components/ModelCreatorProgress";
 
 function mapStateToProps(state) {
-  return { state: state.modelCreator };
+  return { state: state.modelCreator.modelCreatorProgress };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -17,4 +17,6 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  ModelCreatorProgress
+);

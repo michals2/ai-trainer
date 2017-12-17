@@ -10,6 +10,4 @@ const rootReducer = combineReducers({
   router: routerReducer
 });
 
-console.log({ modelCreator, myModels, rootReducer });
-
 export default rootReducer;
