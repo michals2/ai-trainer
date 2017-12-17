@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 // Model imports
-import * as modelCreatorProgressActions from "Model/actions/modelCreatorProgressActions";
+import { incrementStep, decrementStep } from "Model/actions/actions";
 
 // View imports
 import ModelCreator from "Components/ModelCreator";
@@ -13,7 +13,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(modelCreatorProgressActions, dispatch)
+    actions: bindActionCreators({ incrementStep, decrementStep }, dispatch)
   };
 }
 
