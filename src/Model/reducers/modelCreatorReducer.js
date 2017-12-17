@@ -15,7 +15,14 @@ export default (state = initialModelCreatorState, action) => {
           .set("nextButtonDisabled", true)
           .set("step", currentStep + 1)
           .toObject();
-      else
+      else if (currentStep > stepLimits[1]) {
+        console.log("something went wrong");
+        return imState
+          .set("step", stepLimits[1])
+          .set("prevButtonDisabled", false)
+          .set("nextButtonDisabled", true)
+          .toObject();
+      } else
         return imState
           .set("step", currentStep + 1)
           .set("prevButtonDisabled", false)
@@ -28,7 +35,14 @@ export default (state = initialModelCreatorState, action) => {
           .set("prevButtonDisabled", true)
           .set("step", currentStep - 1)
           .toObject();
-      else
+      else if (currentStep > stepLimits[1]) {
+        console.log("something went wrong");
+        return imState
+          .set("step", stepLimits[0])
+          .set("prevButtonDisabled", true)
+          .set("nextButtonDisabled", false)
+          .toObject();
+      } else
         return imState
           .set("step", currentStep - 1)
           .set("prevButtonDisabled", false)
