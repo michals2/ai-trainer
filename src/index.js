@@ -1,16 +1,20 @@
-// Library imports
+/* Library imports */
+// React
 import React from "react";
 import { render } from "react-dom";
+// Redux
 import { Provider } from "react-redux";
+import { ConnectedRouter } from "react-router-redux";
+// Ant Design
 import { LocaleProvider } from "antd";
 import en_US from "antd/lib/locale-provider/en_US";
-import { ConnectedRouter } from "react-router-redux";
+// Routing
 import createHistory from "history/createBrowserHistory";
 
-// Model imports
+/* Model imports */
 import configureStore from "Model/store/configureStore";
 
-// View imports
+/* View imports */
 import App from "Components/App/App";
 
 const history = createHistory();
