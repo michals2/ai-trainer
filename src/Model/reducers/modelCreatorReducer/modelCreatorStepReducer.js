@@ -1,5 +1,5 @@
-import initialModelCreatorState from "./../store/initialModelCreatorState";
-import { INCREMENT_STEP, DECREMENT_STEP } from "../actions/actionTypes";
+import initialModelCreatorState from "Model/store/initialModelCreatorState";
+import { INCREMENT_STEP, DECREMENT_STEP } from "Model/actions/actionTypes";
 const { Map } = require("immutable");
 
 const stepLimits = [0, 3];

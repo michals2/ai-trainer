@@ -1,7 +1,6 @@
-import initialMyModelsState from "./../store/initialMyModelsState";
-// import { INCREMENT_STEP, DECREMENT_STEP } from "../actions/actionTypes";
+import { myModelsInitialState } from "Model/store/initialState";
 
-export default (state = initialMyModelsState, action) => {
+export default (state = myModelsInitialState, action) => {
   switch (action.type) {
     default:
       return state;

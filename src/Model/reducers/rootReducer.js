@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
 
-import modelCreator from "./modelCreatorReducer";
+import modelCreator from "./modelCreatorReducer/modelCreatorReducer";
 import myModels from "./myModelsReducer";
 
 const rootReducer = combineReducers({
