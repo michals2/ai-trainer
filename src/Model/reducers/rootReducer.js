@@ -1,10 +1,5 @@
 import { combineReducers } from "redux";
-import {
-  ConnectedRouter,
-  routerReducer,
-  routerMiddleware,
-  push
-} from "react-router-redux";
+import { routerReducer } from "react-router-redux";
 
 import modelCreator from "./modelCreatorReducer";
 import myModels from "./myModelsReducer";

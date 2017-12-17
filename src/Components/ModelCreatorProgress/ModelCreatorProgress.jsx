@@ -1,7 +1,7 @@
 // React imports
 import React from "react";
 
-import { Steps, Cascader, Button, Icon } from "antd";
+import { Steps, Button, Icon } from "antd";
 const ButtonGroup = Button.Group;
 const Step = Steps.Step;
 

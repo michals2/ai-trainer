@@ -3,7 +3,6 @@ import { Layout, Menu } from "antd";
 
 // Container imports
 import ModelCreatorContainer from "Containers/ModelCreatorContainer";
-import { Steps, Cascader, Icon, Button } from "antd";
 
 // View imports
 // import AppHeader from "Components/AppHeader/AppHeader";
