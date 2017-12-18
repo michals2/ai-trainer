@@ -1,16 +1,16 @@
 // myModelsReducer
-export const myModelsInitialState = {
+export const myModels = {
   models: []
 };
 
 // modelCreatorProgressReducer
-export const modelCreatorProgressInitialState = {
+export const modelCreatorProgress = {
   step: 0,
   prevButtonDisabled: true,
   nextButtonDisabled: false
 };
 
 // modelCreatorLabelToolReducer
-export const modelCreatorLabelToolInitialState = {
+export const labelTool = {
   labels: []
 };

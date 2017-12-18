@@ -1,6 +1,6 @@
-import { myModelsInitialState } from "Model/store/initialState";
+import { myModels } from "Model/store/initialState";
 
-export default (state = myModelsInitialState, action) => {
+export default (state = myModels, action) => {
   switch (action.type) {
     default:
       return state;
