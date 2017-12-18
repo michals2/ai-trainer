@@ -11,7 +11,7 @@ const ModelCreatorProgress = props => {
     <div>
       <Steps progressDot current={props.state.step} style={{ width: 600 }}>
         <Step title="Choose Type" />
-        <Step title="Split Dataset" />
+        <Step title="Specify Labels" />
         <Step title="Label Dataset" />
         <Step title="Train Model" />
       </Steps>
