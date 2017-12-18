@@ -12,5 +12,6 @@ export const modelCreatorProgress = {
 
 // modelCreatorLabelToolReducer
 export const labelTool = {
-  labels: []
+  labels: [],
+  activeLabelType: 0
 };
