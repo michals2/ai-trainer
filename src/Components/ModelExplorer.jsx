@@ -3,7 +3,6 @@ import React from "react";
 import { Cascader } from "antd";
 
 import options from "static/js/modelTypes";
-// const options = ;
 
 function onChange(value, selectedOptions) {
   console.log(value, selectedOptions);
