@@ -2,18 +2,21 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 // Model imports
-import { addLabel, deleteLabel } from "Model/actions/actions";
+import { addLabel, deleteLabel, setLabelType } from "Model/actions/actions";
 
 // View imports
 import LabelTool from "Components/LabelTool";
 
 function mapStateToProps(state) {
-  return { state: state.modelCreator.LabelTool };
+  return { state: state.modelCreator.labelTool };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ addLabel, deleteLabel }, dispatch)
+    actions: bindActionCreators(
+      { addLabel, deleteLabel, setLabelType },
+      dispatch
+    )
   };
 }
 

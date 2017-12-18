@@ -11,5 +11,8 @@ export function addLabel(shape, dimensions, file) {
   return { type: types.ADD_LABEL, shape, dimensions, file };
 }
 export function deleteLabel(file, labelID) {
-  return { type: types.ADD_LABEL, file, labelID };
+  return { type: types.DELETE_LABEL, file, labelID };
+}
+export function setLabelType(labelType) {
+  return { type: types.SET_LABEL_TYPE, labelType };
 }
