@@ -1,8 +1,7 @@
 # AI Trainer
 ## Train ML models from your browser
 
-### Frontend Architecture
+### Things to improve
 
-* App
-  * NavBar
-  * MainContent
+* Routing
+  * Browser history and the model creator steps can get out of sync
