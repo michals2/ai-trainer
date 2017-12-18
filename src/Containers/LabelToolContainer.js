@@ -8,7 +8,7 @@ import { addLabel, deleteLabel, setLabelType } from "Model/actions/actions";
 import LabelTool from "Components/LabelTool";
 
 function mapStateToProps(state) {
-  return { state: state.modelCreator.labelTool };
+  return { state: state.modelCreator };
 }
 
 function mapDispatchToProps(dispatch) {

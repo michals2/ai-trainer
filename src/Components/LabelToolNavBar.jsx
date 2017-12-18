@@ -8,12 +8,8 @@ const LabelToolNavBar = props => {
   return (
     <div>
       <RadioGroup
-        defaultValue="0"
-        onChange={e => {
-          // console.log({ props });
-          // props.actions.push("/foo");
-          props.actions.setLabelType(e.target.value);
-        }}
+        value={`${props.state.labelTool.activeLabelType}`}
+        onChange={e => props.actions.setLabelType(e.target.value)}
       >
         <RadioButton value="0">Raccoon</RadioButton>
         <RadioButton value="1">Human</RadioButton>
