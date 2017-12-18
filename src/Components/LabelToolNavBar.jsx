@@ -4,11 +4,10 @@ const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
 const LabelToolNavBar = props => {
-  console.log({ props });
   return (
     <div>
       <RadioGroup
-        value={props.state.activeLabelType}
+        defaultValue="0"
         onChange={e => props.actions.setLabelType(e.target.value)}
       >
         <RadioButton value="0">Raccoon</RadioButton>

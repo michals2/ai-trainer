@@ -12,7 +12,7 @@ export default (state = labelTool, action) => {
     case DELETE_LABEL:
       console.log({ action });
     case SET_LABEL_TYPE:
-      console.log({ action });
+      return { ...state, activeLabelType: action.labelType };
 
     default:
       return state;
