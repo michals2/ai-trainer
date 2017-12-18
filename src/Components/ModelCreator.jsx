@@ -2,13 +2,13 @@
 import React from "react";
 
 import ModelCreatorProgressContainer from "Containers/ModelCreatorProgressContainer";
-import LabelTool from "Components/LabelTool";
+import LabelToolContainer from "Containers/LabelToolContainer";
 
-const ModelCreator = props => {
+const ModelCreator = () => {
   return (
     <div style={{ height: 500 }}>
       <ModelCreatorProgressContainer />
-      <LabelTool {...props} />
+      <LabelToolContainer />
     </div>
   );
 };
