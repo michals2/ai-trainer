@@ -6,6 +6,7 @@ const ButtonGroup = Button.Group;
 const Step = Steps.Step;
 
 const ModelCreatorProgress = props => {
+  console.log({ props });
   return (
     <div>
       <Steps progressDot current={props.state.step} style={{ width: 600 }}>
@@ -17,14 +18,20 @@ const ModelCreatorProgress = props => {
       <ButtonGroup>
         <Button
           type="primary"
-          onClick={props.actions.decrementStep}
+          onClick={() => {
+            props.actions.push(`${props.state.step - 1}`);
+            props.actions.decrementStep();
+          }}
           disabled={props.state.prevButtonDisabled}
         >
           <Icon type="left" />Previous
         </Button>
         <Button
           type="primary"
-          onClick={props.actions.incrementStep}
+          onClick={() => {
+            props.actions.push(`${props.state.step + 1}`);
+            props.actions.incrementStep();
+          }}
           disabled={props.state.nextButtonDisabled}
         >
           Next<Icon type="right" />

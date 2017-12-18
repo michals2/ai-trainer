@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 /* Container/View Imports */
 import ModelCreator from "Components/ModelCreator";
 import Home from "Components/Home";
-import AppHeader from "Components/AppHeader";
+import AppHeaderContainer from "Containers/AppHeaderContainer";
 
 /* Destructuring */
 const { Header, Content, Footer } = Layout;
@@ -16,13 +16,13 @@ const App = () =>
   <Layout>
     <Layout>
       <Header className="header">
-        <AppHeader />
+        <AppHeaderContainer />
       </Header>
       <Content style={{ margin: "60px", overflow: "initial" }}>
         <div style={{ padding: 40, background: "#fff" }}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/ModelCreator" component={ModelCreator} />
+            <Route path="/ModelCreator" component={ModelCreator} />
           </Switch>
         </div>
       </Content>
