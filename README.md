@@ -61,6 +61,6 @@
 ## Things to improve
 
 * Routing
-  [] Browser history and the model creator steps can get out of sync
+  - [ ] Browser history and the model creator steps can get out of sync
 * Frontend
-  [] [upload files to browser](https://scotch.io/tutorials/use-the-html5-file-api-to-work-with-files-locally-in-the-browser)
+  - [ ] [upload files to browser](https://scotch.io/tutorials/use-the-html5-file-api-to-work-with-files-locally-in-the-browser)
