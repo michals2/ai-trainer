@@ -1,5 +1,5 @@
 // React imports
-import React, { Component } from "react";
+import React from "react";
 
 const FileUploader = props => {
   console.log({ props });
@@ -25,7 +25,12 @@ const FileUploader = props => {
     <div>
       <input multiple id="the-file-input" type="file" onChange={handleChange} />
       {props.files.map((imageObj, i) =>
-        <img width={100} key={i} src={imageObj.url} />
+        <img
+          width={100}
+          key={i}
+          src={imageObj.url}
+          alt="something went wrong"
+        />
       )}
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Switch } from "react-router";
 
 import LabelToolNavBar from "Components/LabelToolNavBar";
 import LabelSVG from "Components/LabelSVG";

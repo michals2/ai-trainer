@@ -1,8 +1,7 @@
 /* Library Imports */
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 import { Route, Switch } from "react-router";
-import { Link } from "react-router-dom";
 
 /* Container/View Imports */
 import ModelCreator from "Components/ModelCreator";
@@ -20,7 +19,7 @@ const App = () => {
         <Header className="header">
           <AppHeaderContainer />
         </Header>
-        <Content style={{ margin: "60px", overflow: "initial" }}>
+        <Content style={{ margin: 20, overflow: "initial" }}>
           <div style={{ padding: 40, background: "#fff" }}>
             <Switch>
               <Route exact path="/" component={Home} />

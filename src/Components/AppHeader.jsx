@@ -10,8 +10,9 @@ const AppHeader = props => {
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={["1"]}
-        style={{ lineHeight: "64px" }}
+        style={{ height: 60 }}
       >
+        <Menu.Item key="0">TensorFlex</Menu.Item>
         <Menu.Item key="1">
           <Link to="/">Home</Link>
         </Menu.Item>

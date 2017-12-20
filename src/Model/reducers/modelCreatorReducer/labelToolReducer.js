@@ -9,8 +9,10 @@ export default (state = labelTool, action) => {
   switch (action.type) {
     case ADD_LABEL:
       console.log({ action });
+      break;
     case DELETE_LABEL:
       console.log({ action });
+      break;
     case SET_LABEL_TYPE:
       return { ...state, activeLabelType: action.labelType };
 
