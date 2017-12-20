@@ -1,7 +1,7 @@
 # TensorFlex
-## Train ML models from your browser
+Train ML models from your browser
 
-## Frontend
+### Frontend
 
 #### View Architecture
 
@@ -60,11 +60,11 @@
       * hash: ""
       * key: ""
 
-## Backend
+### Backend
 
   * [AWS Deep Learning](https://aws.amazon.com/documentation/dlami/)
 
-## Things to improve
+### Things to improve
 
 * Routing
   - [ ] Browser history and the model creator steps can get out of sync
