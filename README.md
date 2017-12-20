@@ -1,7 +1,7 @@
 # AI Trainer
 ## Train ML models from your browser
 
-### Frontend architecture
+### Frontend Architecture
 
 * LocaleProvider
   * Provider
