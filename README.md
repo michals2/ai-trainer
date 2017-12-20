@@ -7,21 +7,21 @@
 
 * LocaleProvider
   * Provider
-    * **ConnectedRouter**
+    * ConnectedRouter **(TF-6)**
       * App
         * Switch
-          * **AppHeaderContainer**
+          * AppHeaderContainer **(TF-1)**
             * AppHeader
           * Home
         * ModelCreator
-          * **ModelCreatorProgressContainer**
+          * ModelCreatorProgressContainer **(TF-2)**
             * ModelCreatorProgress
           * Switch
             * ModelExplorer
-            * **FileUploaderContainer**
+            * FileUploaderContainer **(TF-3)**
               * FileUploader
             * LabelSpecifier
-            * **LabelToolContainer**
+            * LabelToolContainer **(TF-4)**
               * LabelTool
                 * LabelToolNavBar
                 * LabelSVG
@@ -32,28 +32,28 @@
 
 * RootReducer
   * modelCreatorReducer
-    * modelCreatorProgressReducer
-    * fileUploaderReducer
-    * labelToolReducer
-  * myModelsReducer
-  * routerReducer
+    * modelCreatorProgressReducer **(TF-2)**
+    * fileUploaderReducer **(TF-3)**
+    * labelToolReducer **(TF-4)**
+  * myModelsReducer **(TF-5)**
+  * routerReducer **(TF-6)**
 
 #### State Architecture
 
 * State
   * modelCreator
-    * modelCreatorProgress
+    * modelCreatorProgress **(TF-1) (TF-2)**
       * step: #
       * prevButtonDisabled: bool
       * nextButtonDisabled: bool
-    * fileUploader
+    * fileUploader **(TF-3)**
       * files: []
-    * labelTool
+    * labelTool **(TF-4)**
       * labels: []
       * activeLabelType: #
-  * myModels
+  * myModels **(TF-5)**
     * models: []
-  * router
+  * router **(TF-6)**
     * location
       * pathname: ""
       * search: ""

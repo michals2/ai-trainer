@@ -7,10 +7,4 @@ function mapStateToProps(state) {
   return { modelCreatorStep: state.modelCreator.modelCreatorProgress.step };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     actions: bindActionCreators({ push }, dispatch)
-//   };
-// }
-
 export default connect(mapStateToProps, null)(AppHeader);
