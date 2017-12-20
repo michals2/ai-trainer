@@ -1,8 +1,10 @@
 import { modelCreatorProgress } from "Model/store/initialState";
 import { INCREMENT_STEP, DECREMENT_STEP } from "Model/actions/actionTypes";
+import { numberOfModelCreationSteps } from "static/js/modelCreationSteps";
+
 const { Map } = require("immutable");
 
-const stepLimits = [0, 3];
+const stepLimits = [0, numberOfModelCreationSteps - 1];
 
 export default (state = modelCreatorProgress, action) => {
   const imState = Map(state);

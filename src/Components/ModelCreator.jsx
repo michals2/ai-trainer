@@ -3,20 +3,21 @@ import React from "react";
 import { Route, Switch } from "react-router";
 
 import ModelCreatorProgressContainer from "Containers/ModelCreatorProgressContainer";
-import LabelToolContainer from "Containers/LabelToolContainer";
-import ModelExplorer from "Components/ModelExplorer";
-import LabelSpecifier from "Components/LabelSpecifier";
-import TrainModel from "Components/TrainModel";
+
+import { modelCreationSteps } from "static/js/modelCreationSteps";
 
 const ModelCreator = () => {
   return (
     <div style={{ height: 500 }}>
       <ModelCreatorProgressContainer />
       <Switch>
-        <Route path="/ModelCreator/0" component={ModelExplorer} />
-        <Route path="/ModelCreator/1" component={LabelSpecifier} />
-        <Route path="/ModelCreator/2" component={LabelToolContainer} />
-        <Route path="/ModelCreator/3" component={TrainModel} />
+        {modelCreationSteps.map((step, i) =>
+          <Route
+            key={i}
+            path={`/ModelCreator/${step.id}`}
+            component={step.component}
+          />
+        )}
       </Switch>
     </div>
   );

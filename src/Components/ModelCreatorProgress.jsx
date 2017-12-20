@@ -2,18 +2,19 @@
 import React from "react";
 
 import { Steps, Button, Icon } from "antd";
+
+import { modelCreationStepNames } from "static/js/modelCreationSteps";
+
 const ButtonGroup = Button.Group;
 const Step = Steps.Step;
 
 const ModelCreatorProgress = props => {
-  console.log({ props });
   return (
     <div>
       <Steps progressDot current={props.state.step} style={{ width: 600 }}>
-        <Step title="Choose Type" />
-        <Step title="Specify Labels" />
-        <Step title="Label Dataset" />
-        <Step title="Train Model" />
+        {modelCreationStepNames.map((stepName, i) =>
+          <Step key={i} title={stepName} />
+        )}
       </Steps>
       <ButtonGroup>
         <Button
