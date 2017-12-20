@@ -7,27 +7,29 @@ const FileUploader = props => {
   const handleChange = e => {
     const files = [...e.target.files];
 
+    console.log({ files });
+
     files.forEach(file => {
       console.log({ file });
       const reader = new FileReader();
 
       reader.onload = event => {
         const url = event.target.result;
-        console.log({ url });
-        // this.setState({ images: [...this.state.images, url] }, () =>
-        //   console.log(this.state)
-        // );
-        props.actions.addFile(url);
+        const fileName = file.name;
+
+        props.actions.addFile(url, fileName);
       };
 
-      reader.readAsDataURL(files[0]);
+      reader.readAsDataURL(file);
     });
   };
 
   return (
     <div>
       <input multiple id="the-file-input" type="file" onChange={handleChange} />
-      {props.files.map((image, i) => <img width={100} key={i} src={image} />)}
+      {props.files.map((imageObj, i) =>
+        <img width={100} key={i} src={imageObj.url} />
+      )}
     </div>
   );
 };

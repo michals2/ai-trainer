@@ -4,7 +4,8 @@ import { ADD_FILE } from "Model/actions/actionTypes";
 export default (state = fileUploader, action) => {
   switch (action.type) {
     case ADD_FILE:
-      return { ...state, files: [...state.files, action.file] };
+      const fileObj = { fileName: action.fileName, url: action.url };
+      return { ...state, files: [...state.files, fileObj] };
 
     default:
       return state;

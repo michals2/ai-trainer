@@ -17,6 +17,6 @@ export function setLabelType(labelType) {
   return { type: types.SET_LABEL_TYPE, labelType };
 }
 
-export function addFile(file) {
-  return { type: types.ADD_FILE, file };
+export function addFile(url, fileName) {
+  return { type: types.ADD_FILE, url, fileName };
 }
