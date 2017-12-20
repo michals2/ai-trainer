@@ -1,4 +1,4 @@
-# AI Trainer
+# TensorFlex
 ## Train ML models from your browser
 
 ### Frontend Architecture
