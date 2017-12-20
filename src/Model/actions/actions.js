@@ -16,3 +16,7 @@ export function deleteLabel(file, labelID) {
 export function setLabelType(labelType) {
   return { type: types.SET_LABEL_TYPE, labelType };
 }
+
+export function addFile(file) {
+  return { type: types.ADD_FILE, file };
+}

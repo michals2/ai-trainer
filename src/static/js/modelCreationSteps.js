@@ -1,5 +1,5 @@
 import ModelExplorer from "Components/ModelExplorer";
-import FileUploader from "Components/FileUploader";
+import FileUploaderContainer from "Containers/FileUploaderContainer";
 import LabelSpecifier from "Components/LabelSpecifier";
 import LabelToolContainer from "Containers/LabelToolContainer";
 import SplitDataset from "Components/SplitDataset";
@@ -22,7 +22,7 @@ export const modelCreationStepNames = [
 
 export const modelCreationSteps = [
   new Step("Choose Model Type", 0, ModelExplorer),
-  new Step("Upload Files", 1, FileUploader),
+  new Step("Upload Files", 1, FileUploaderContainer),
   new Step("Create Labels", 2, LabelSpecifier),
   new Step("Label Dataset", 3, LabelToolContainer),
   new Step("Split Dataset", 4, SplitDataset),

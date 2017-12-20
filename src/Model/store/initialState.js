@@ -15,3 +15,8 @@ export const labelTool = {
   labels: [],
   activeLabelType: 0
 };
+
+// fileUploaderReducer
+export const fileUploader = {
+  files: []
+};
