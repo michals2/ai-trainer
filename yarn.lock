@@ -5673,10 +5673,6 @@ react-error-overlay@^2.0.2:
     settle-promise "1.0.0"
     source-map "0.5.6"
 
-react-file-input@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/react-file-input/-/react-file-input-0.2.5.tgz#a355367d9323d5c6352ddd3cd7ec3582e5c9b245"
-
 react-lazy-load@^3.0.12:
   version "3.0.12"
   resolved "https://registry.yarnpkg.com/react-lazy-load/-/react-lazy-load-3.0.12.tgz#2b841dfc3227e8119d033189d2c960ce384d0cb9"
