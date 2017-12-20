@@ -8,7 +8,7 @@ const LabelToolNavBar = props => {
   return (
     <div>
       <RadioGroup
-        value={`${props.state.labelTool.activeLabelType}`}
+        value={`${props.activeLabelType}`}
         onChange={e => props.actions.setLabelType(e.target.value)}
       >
         <RadioButton value="0">Raccoon</RadioButton>

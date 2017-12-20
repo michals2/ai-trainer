@@ -8,7 +8,11 @@ import { addLabel, deleteLabel, setLabelType } from "Model/actions/actions";
 import LabelTool from "Components/LabelTool";
 
 function mapStateToProps(state) {
-  return { state: state.modelCreator };
+  const modelCreator = state.modelCreator;
+  return {
+    files: modelCreator.fileUploader.files,
+    activeLabelType: modelCreator.labelTool.activeLabelType
+  };
 }
 
 function mapDispatchToProps(dispatch) {
