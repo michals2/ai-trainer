@@ -7,10 +7,7 @@ const FileUploader = props => {
   const handleChange = e => {
     const files = [...e.target.files];
 
-    console.log({ files });
-
     files.forEach(file => {
-      console.log({ file });
       const reader = new FileReader();
 
       reader.onload = event => {
