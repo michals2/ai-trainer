@@ -18,11 +18,14 @@
             * ModelCreatorProgress
           * Switch
             * ModelExplorer
+            * **FileUploaderContainer**
+              * FileUploader
             * LabelSpecifier
             * **LabelToolContainer**
               * LabelTool
                 * LabelToolNavBar
                 * LabelSVG
+            * Split Dataset
             * TrainModel
 
 #### Reducers Architecture
@@ -30,7 +33,8 @@
 * RootReducer
   * modelCreatorReducer
     * modelCreatorProgressReducer
-    * modelCreatorReducer
+    * fileUploaderReducer
+    * labelToolReducer
   * myModelsReducer
   * routerReducer
 
@@ -42,6 +46,8 @@
       * step: #
       * prevButtonDisabled: bool
       * nextButtonDisabled: bool
+    * fileUploader
+      * files: []
     * labelTool
       * labels: []
       * activeLabelType: #
