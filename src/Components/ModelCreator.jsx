@@ -1,4 +1,3 @@
-// React imports
 import React from "react";
 import { Route, Switch } from "react-router";
 
@@ -8,7 +7,7 @@ import { modelCreationSteps } from "static/js/modelCreationSteps";
 
 const ModelCreator = () => {
   return (
-    <div style={{ height: 500 }}>
+    <div>
       <ModelCreatorProgressContainer />
       <Switch>
         {modelCreationSteps.map((step, i) =>

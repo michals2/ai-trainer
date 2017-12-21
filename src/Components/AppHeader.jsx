@@ -12,9 +12,8 @@ const AppHeader = props => {
         defaultSelectedKeys={["1"]}
         style={{ height: 60 }}
       >
-        <Menu.Item key="0">TensorFlex</Menu.Item>
         <Menu.Item key="1">
-          <Link to="/">Home</Link>
+          <Link to="/">TensorFlex</Link>
         </Menu.Item>
         <Menu.Item key="2">
           <Link to="/MyModels">My Models</Link>
