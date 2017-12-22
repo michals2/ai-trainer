@@ -7,14 +7,17 @@ import { Route, Switch } from "react-router";
 import ModelCreator from "Components/ModelCreator";
 import Home from "Components/Home";
 import AppHeaderContainer from "Containers/AppHeaderContainer";
+import MyImages from "Components/MyImages";
+import About from "Components/About";
+import AppFooter from "Components/AppFooter";
 
 /* Destructuring */
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 const App = () => {
   // console.log(this)
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Layout>
         <Header className="header">
           <AppHeaderContainer />
@@ -23,11 +26,13 @@ const App = () => {
           <div style={{ padding: 40, background: "#fff" }}>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/MyImages" component={MyImages} />
               <Route path="/ImageLabeler" component={ModelCreator} />
+              <Route path="/About" component={About} />
             </Switch>
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>Created by Luke Michals</Footer>
+        <AppFooter />
       </Layout>
     </Layout>
   );
