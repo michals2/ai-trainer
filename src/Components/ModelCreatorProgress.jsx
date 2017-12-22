@@ -4,7 +4,6 @@ import React from "react";
 import { Steps, Button, Icon } from "antd";
 
 import { modelCreationStepNames } from "static/js/modelCreationSteps";
-import { Row, Col } from "antd";
 
 const ButtonGroup = Button.Group;
 const Step = Steps.Step;
