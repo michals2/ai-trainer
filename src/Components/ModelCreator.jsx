@@ -5,19 +5,28 @@ import ModelCreatorProgressContainer from "Containers/ModelCreatorProgressContai
 
 import { modelCreationSteps } from "static/js/modelCreationSteps";
 
+const rowStyle = {
+  padding: 20,
+  alignItems: "center",
+  justifyContent: "center",
+  display: "flex"
+};
+
 const ModelCreator = () => {
   return (
     <div>
       <ModelCreatorProgressContainer />
-      <Switch>
-        {modelCreationSteps.map((step, i) =>
-          <Route
-            key={i}
-            path={`/ModelCreator/${step.id}`}
-            component={step.component}
-          />
-        )}
-      </Switch>
+      <div style={rowStyle}>
+        <Switch>
+          {modelCreationSteps.map((step, i) =>
+            <Route
+              key={i}
+              path={`/ModelCreator/${step.id}`}
+              component={step.component}
+            />
+          )}
+        </Switch>
+      </div>
     </div>
   );
 };

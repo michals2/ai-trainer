@@ -9,46 +9,51 @@ import { Row, Col } from "antd";
 const ButtonGroup = Button.Group;
 const Step = Steps.Step;
 
+const buttonStyle = { width: 150 };
+const rowStyle = {
+  padding: 20,
+  alignItems: "center",
+  justifyContent: "center",
+  display: "flex"
+};
+
 const ModelCreatorProgress = props => {
   return (
     <div>
-      <Row type="flex" justify="center">
-        <Col span={20}>
-          {/* <ModelCreatorProgressContainer /> */}
-          <Steps progressDot current={props.state.step} style={{ width: 600 }}>
-            {modelCreationStepNames.map((stepName, i) =>
-              <Step key={i} title={stepName} />
-            )}
-          </Steps>
-        </Col>
-      </Row>
+      <div style={rowStyle}>
+        <Steps progressDot current={props.state.step} size="small">
+          {modelCreationStepNames.map((stepName, i) =>
+            <Step key={i} title={stepName} />
+          )}
+        </Steps>
+      </div>
 
-      <Row type="flex" justify="space-around" align="middle">
-        <Col span={10}>
-          <ButtonGroup>
-            <Button
-              type="primary"
-              onClick={() => {
-                props.actions.push(`${props.state.step - 1}`);
-                props.actions.decrementStep();
-              }}
-              disabled={props.state.prevButtonDisabled}
-            >
-              <Icon type="left" />Previous
-            </Button>
-            <Button
-              type="primary"
-              onClick={() => {
-                props.actions.push(`${props.state.step + 1}`);
-                props.actions.incrementStep();
-              }}
-              disabled={props.state.nextButtonDisabled}
-            >
-              Next<Icon type="right" />
-            </Button>
-          </ButtonGroup>
-        </Col>
-      </Row>
+      <div style={rowStyle}>
+        <ButtonGroup>
+          <Button
+            type="primary"
+            onClick={() => {
+              props.actions.push(`${props.state.step - 1}`);
+              props.actions.decrementStep();
+            }}
+            disabled={props.state.prevButtonDisabled}
+            style={buttonStyle}
+          >
+            <Icon type="left" />Previous
+          </Button>
+          <Button
+            type="primary"
+            onClick={() => {
+              props.actions.push(`${props.state.step + 1}`);
+              props.actions.incrementStep();
+            }}
+            disabled={props.state.nextButtonDisabled}
+            style={buttonStyle}
+          >
+            Next<Icon type="right" />
+          </Button>
+        </ButtonGroup>
+      </div>
     </div>
   );
 };
