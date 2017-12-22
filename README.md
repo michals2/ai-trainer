@@ -1,5 +1,5 @@
 # TensorFlex
-Train ML models from your browser
+Image labeling tool for for creating object detection models
 
 ### Frontend
 
