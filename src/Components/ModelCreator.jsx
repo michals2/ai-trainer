@@ -21,7 +21,7 @@ const ModelCreator = () => {
           {modelCreationSteps.map((step, i) =>
             <Route
               key={i}
-              path={`/ModelCreator/${step.id}`}
+              path={`/ImageLabeler/${step.id}`}
               component={step.component}
             />
           )}

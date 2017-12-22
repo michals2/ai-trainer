@@ -23,7 +23,7 @@ const App = () => {
           <div style={{ padding: 40, background: "#fff" }}>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/ModelCreator" component={ModelCreator} />
+              <Route path="/ImageLabeler" component={ModelCreator} />
             </Switch>
           </div>
         </Content>

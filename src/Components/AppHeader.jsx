@@ -16,10 +16,10 @@ const AppHeader = props => {
           <Link to="/">TensorFlex</Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to="/MyModels">My Models</Link>
+          <Link to={`/MyImages`}>My Images</Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to={`/ModelCreator/${modelCreatorStep}`}>Create Model</Link>
+          <Link to={`/ImageLabeler/${modelCreatorStep}`}>Label Images</Link>
         </Menu.Item>
         <Menu.Item key="4">
           <Link to="/About">About</Link>
