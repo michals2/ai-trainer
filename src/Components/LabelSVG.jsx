@@ -12,36 +12,74 @@ const handleMouseDown = e => {
   console.log({ height, width, x, y });
 };
 
+const findLabelJSX = label => {
+  const { key } = label;
+  switch (label.shape) {
+    case "Rectangle":
+      let { x, y, height, width } = label;
+      return (
+        <rect
+          key={key}
+          x={x}
+          y={y}
+          height={height}
+          width={width}
+          style={{ fill: "none", stroke: "red", strokeWidth: 2 }}
+        />
+      );
+    case "Circle":
+      let { cx, cy, r } = label;
+      return (
+        <circle
+          key={key}
+          cx={cx}
+          cy={cy}
+          r={r}
+          style={{ fill: "none", stroke: "blue", strokeWidth: 2 }}
+        />
+      );
+    default:
+      return "something went wrong";
+  }
+};
+
 class LabelSVG extends Component {
   constructor(props) {
     super(props);
     const currImage = props.files.length > 0 ? props.files[0] : stockFile;
     this.state = {
-      currImage
+      currImage,
+      labels: [
+        {
+          key: "1",
+          shape: "Circle",
+          cx: "100",
+          cy: "200",
+          r: "25"
+        },
+        {
+          key: "2",
+          shape: "Rectangle",
+          x: "300",
+          y: "200",
+          height: "200",
+          width: "33"
+        }
+      ]
     };
   }
   render() {
+    const currImage = this.state.currImage;
+    const url = currImage.url;
+    const { height, width } = currImage.dims;
     return (
       <div>
         <svg
           style={{ ...this.state.currImage.dims, border: "1px solid black" }}
           onMouseDown={handleMouseDown}
         >
-          <image
-            href={this.state.currImage.url}
-            width={this.state.currImage.dims.width}
-            height={this.state.currImage.dims.height}
-            x="0"
-            y="0"
-          />
-          <circle cx="100" cy="100" r="25" />
-          <rect
-            x="100"
-            y="100"
-            height="200"
-            width="33"
-            style={{ fill: "none", stroke: "red", strokeWidth: 2 }}
-          />
+          <image href={url} width={width} height={height} x="0" y="0" />
+          {this.state.labels.map(label => findLabelJSX(label))}
         </svg>
       </div>
     );
