@@ -27,8 +27,8 @@ const FileUploader = props => {
 
           img.onload = function() {
             const { height, width } = img;
-            const dims = { height, width, ar: width / height };
-            props.actions.addFile(url, fileName, dims);
+            const imageDims = { height, width, ar: width / height };
+            props.actions.addFile(url, fileName, imageDims);
           };
         };
 

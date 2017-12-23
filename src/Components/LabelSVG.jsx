@@ -1,6 +1,9 @@
 import React from "react";
 import stockImage from "static/images/raccoon-1.jpg";
 
+const stockFile = { url: stockImage, dims: { width: "650", height: "417" } };
+console.log({ stockImage });
+
 // const handleMouseDown = e => {
 //   console.log(e.target);
 // };
@@ -13,16 +16,22 @@ const handleMouseDown = e => {
   console.log({ height, width, x, y });
 };
 
+const findImageDims = file => {
+  if (!file) return { width: "650", height: "417" };
+  else return { width: file.dims.width, height: file.dims.height };
+};
+
 const LabelSVG = props => {
-  const currImage = props.files.length > 0 ? props.files[0] : stockImage;
+  const currImage = props.files.length > 0 ? props.files[0] : stockFile;
+  const { height, width } = findImageDims(currImage);
   console.log({ currImage });
   return (
     <div>
       <svg
-        style={{ width: "650", height: "417", border: "1px solid black" }}
+        style={{ height, width, border: "1px solid black" }}
         onMouseDown={handleMouseDown}
       >
-        <image href={currImage} width="650" height="417" x="0" y="0" />
+        <image href={currImage.url} width={width} height={height} x="0" y="0" />
         <circle cx="100" cy="100" r="25" />
         <rect
           x="100"
