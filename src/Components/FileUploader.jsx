@@ -22,9 +22,14 @@ const FileUploader = props => {
           const url = event.target.result;
           const fileName = file.name;
 
-          console.log({ url, fileName });
+          const img = new Image();
+          img.src = url;
 
-          props.actions.addFile(url, fileName);
+          img.onload = function() {
+            const { height, width } = img;
+            const dims = { height, width, ar: width / height };
+            props.actions.addFile(url, fileName, dims);
+          };
         };
 
         reader.readAsDataURL(file);
