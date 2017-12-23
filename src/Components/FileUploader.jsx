@@ -1,23 +1,36 @@
 // React imports
 import React from "react";
 
+const acceptedFileTypes = ["image/jpeg"];
+
 const FileUploader = props => {
-  console.log({ props });
+  // console.log({ props });
 
   const handleChange = e => {
     const files = [...e.target.files];
 
+    console.log({ files });
+
     files.forEach(file => {
-      const reader = new FileReader();
+      if (
+        acceptedFileTypes.some(
+          acceptedFileType => file.type === acceptedFileType
+        )
+      ) {
+        const reader = new FileReader();
+        reader.onload = event => {
+          const url = event.target.result;
+          const fileName = file.name;
 
-      reader.onload = event => {
-        const url = event.target.result;
-        const fileName = file.name;
+          console.log({ url, fileName });
 
-        props.actions.addFile(url, fileName);
-      };
+          props.actions.addFile(url, fileName);
+        };
 
-      reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
+      } else {
+        console.log("not an image");
+      }
     });
   };
 
