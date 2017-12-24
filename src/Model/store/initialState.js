@@ -4,7 +4,7 @@ export const myModels = {
 };
 
 // modelCreatorProgressReducer
-export const modelCreatorProgress = {
+export const labelCreatorProgress = {
   step: 0,
   prevButtonDisabled: true,
   nextButtonDisabled: false

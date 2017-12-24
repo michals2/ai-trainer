@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
 
-import modelCreator from "./modelCreatorReducer/modelCreatorReducer";
-import myModels from "./myModelsReducer";
+import labelCreator from "./labelCreatorReducer/labelCreatorReducer";
+// import myModels from "./myModelsReducer";
 
 const rootReducer = combineReducers({
-  modelCreator,
-  myModels,
+  labelCreator,
+  // myModels,
   router: routerReducer
 });
 

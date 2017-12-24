@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import modelCreatorProgress from "./subReducers/modelCreatorProgressReducer";
+import labelCreatorProgress from "./subReducers/labelCreatorProgressReducer";
 import labelTool from "./subReducers/labelToolReducer";
 import fileUploader from "./subReducers/fileUploaderReducer";
 
 const modelCreatorReducer = combineReducers({
-  modelCreatorProgress,
+  labelCreatorProgress,
   fileUploader,
   labelTool
 });

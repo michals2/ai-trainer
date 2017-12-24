@@ -1,12 +1,12 @@
-import { modelCreatorProgress } from "Model/store/initialState";
+import { labelCreatorProgress } from "Model/store/initialState";
 import { INCREMENT_STEP, DECREMENT_STEP } from "Model/actions/actionTypes";
-import { numberOfModelCreationSteps } from "static/js/modelCreationSteps";
+import { numberOfLabelCreationSteps } from "static/js/labelCreationSteps";
 
 const { Map } = require("immutable");
 
-const stepLimits = [0, numberOfModelCreationSteps - 1];
+const stepLimits = [0, numberOfLabelCreationSteps - 1];
 
-export default (state = modelCreatorProgress, action) => {
+export default (state = labelCreatorProgress, action) => {
   const imState = Map(state);
   const currentStep = state.step;
 

@@ -4,7 +4,7 @@ import { Layout } from "antd";
 import { Route, Switch } from "react-router";
 
 /* Container/View Imports */
-import ModelCreator from "Components/ModelCreator";
+import LabelCreator from "Components/LabelCreator";
 import Home from "Components/Home";
 import AppHeaderContainer from "Containers/AppHeaderContainer";
 import MyImages from "Components/MyImages";
@@ -27,7 +27,7 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/MyImages" component={MyImages} />
-              <Route path="/ImageLabeler" component={ModelCreator} />
+              <Route path="/ImageLabeler" component={LabelCreator} />
               <Route path="/About" component={About} />
             </Switch>
           </div>

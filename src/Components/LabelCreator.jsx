@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 
-import ModelCreatorProgressContainer from "Containers/ModelCreatorProgressContainer";
+import LabelCreatorProgressContainer from "Containers/LabelCreatorProgressContainer";
 
-import { modelCreationSteps } from "static/js/modelCreationSteps";
+import { labelCreationSteps } from "static/js/labelCreationSteps";
 
 const rowStyle = {
   padding: 20,
@@ -12,13 +12,13 @@ const rowStyle = {
   display: "flex"
 };
 
-const ModelCreator = () => {
+const LabelCreator = () => {
   return (
     <div>
-      <ModelCreatorProgressContainer />
+      <LabelCreatorProgressContainer />
       <div style={rowStyle}>
         <Switch>
-          {modelCreationSteps.map((step, i) =>
+          {labelCreationSteps.map((step, i) =>
             <Route
               key={i}
               path={`/ImageLabeler/${step.id}`}
@@ -31,4 +31,4 @@ const ModelCreator = () => {
   );
 };
 
-export default ModelCreator;
+export default LabelCreator;

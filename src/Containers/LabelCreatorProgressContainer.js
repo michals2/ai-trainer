@@ -6,10 +6,10 @@ import { push } from "react-router-redux";
 import { incrementStep, decrementStep } from "Model/actions/actions";
 
 // View imports
-import ModelCreatorProgress from "Components/ModelCreatorProgress";
+import LabelCreatorProgress from "Components/LabelCreatorProgress";
 
 function mapStateToProps(state) {
-  return { state: state.modelCreator.modelCreatorProgress };
+  return { state: state.labelCreator.labelCreatorProgress };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -22,5 +22,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  ModelCreatorProgress
+  LabelCreatorProgress
 );

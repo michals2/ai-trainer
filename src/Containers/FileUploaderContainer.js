@@ -6,7 +6,7 @@ import { addFile } from "Model/actions/actions";
 import FileUploader from "Components/FileUploader";
 
 function mapStateToProps(state) {
-  return { files: state.modelCreator.fileUploader.files };
+  return { files: state.labelCreator.fileUploader.files };
 }
 
 function mapDispatchToProps(dispatch) {

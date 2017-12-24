@@ -3,7 +3,7 @@ import React from "react";
 
 import { Steps, Button, Icon } from "antd";
 
-import { modelCreationStepNames } from "static/js/modelCreationSteps";
+import { labelCreationStepNames } from "static/js/labelCreationSteps";
 
 const ButtonGroup = Button.Group;
 const Step = Steps.Step;
@@ -21,7 +21,7 @@ const ModelCreatorProgress = props => {
     <div>
       <div style={rowStyle}>
         <Steps progressDot current={props.state.step} size="small">
-          {modelCreationStepNames.map((stepName, i) =>
+          {labelCreationStepNames.map((stepName, i) =>
             <Step key={i} title={stepName} />
           )}
         </Steps>

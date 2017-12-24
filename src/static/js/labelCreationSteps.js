@@ -11,7 +11,7 @@ function Step(title, id, component) {
   this.component = component;
 }
 
-export const modelCreationStepNames = [
+export const labelCreationStepNames = [
   // "Choose Model Type",
   "Upload Files",
   "Create Labels",
@@ -20,7 +20,7 @@ export const modelCreationStepNames = [
   // "Train Model"
 ];
 
-export const modelCreationSteps = [
+export const labelCreationSteps = [
   // new Step("Choose Model Type", 0, ModelExplorer),
   new Step("Upload Files", 0, FileUploaderContainer),
   new Step("Create Labels", 1, LabelTypeCreator),
@@ -29,4 +29,4 @@ export const modelCreationSteps = [
   // new Step("Train Model", 5, TrainModel)
 ];
 
-export const numberOfModelCreationSteps = modelCreationSteps.length;
+export const numberOfLabelCreationSteps = labelCreationSteps.length;
