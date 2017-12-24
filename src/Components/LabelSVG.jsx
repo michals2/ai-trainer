@@ -22,6 +22,8 @@ class LabelSVG extends Component {
     const x = e.clientX - dims.left;
     const y = e.clientY - dims.top;
     console.log({ height, width, x, y });
+
+    // this.props.actions.modifyLabel({})
   };
 
   render() {
@@ -29,7 +31,7 @@ class LabelSVG extends Component {
       this.props.files.length > 0 ? this.props.files[0] : stockFile;
     const url = currImage.url;
     const { height, width } = currImage.dims;
-    const { labelTypes, activeLabelTypeId } = this.props;
+    const { labelTypes } = this.props;
 
     return (
       <div>
@@ -37,13 +39,7 @@ class LabelSVG extends Component {
           style={{ ...this.currImage.dims, border: "1px solid black" }}
           onMouseDown={this.handleMouseDown}
         >
-          <image
-            href={currImage.url}
-            width={width}
-            height={height}
-            x="0"
-            y="0"
-          />
+          <image href={url} width={width} height={height} x="0" y="0" />
           {this.props.labels.map(label => {
             const shape = labelTypes[label.labelTypeId - 1].shape;
             return returnLabelJSX(label, shape);

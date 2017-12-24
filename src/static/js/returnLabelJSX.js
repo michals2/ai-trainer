@@ -1,9 +1,8 @@
 import React from "react";
 
 export const returnLabelJSX = (label, shape) => {
-  console.log({ label, shape });
   const { id } = label;
-  // console.log({ shape });
+
   switch (shape) {
     case "Rectangle":
       let { x, y, height, width } = label.dims;
