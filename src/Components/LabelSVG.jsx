@@ -28,6 +28,11 @@ class LabelSVG extends Component {
     const currImage = this.currImage;
     const url = currImage.url;
     const { height, width } = currImage.dims;
+    const { labelTypes, activeLabelTypeId } = this.props;
+
+    // console.log(this.props);
+    // const activeLabelShape = labelTypes[activeLabelTypeId].shape;
+    // console.log({ labelTypes, activeLabelTypeId, activeLabelShape });
 
     return (
       <div>
@@ -36,7 +41,10 @@ class LabelSVG extends Component {
           onMouseDown={this.handleMouseDown}
         >
           <image href={url} width={width} height={height} x="0" y="0" />
-          {this.props.labels.map(label => returnLabelJSX(label))}
+          {this.props.labels.map(label => {
+            const shape = labelTypes[label.labelTypeId - 1].shape;
+            return returnLabelJSX(label, shape);
+          })}
         </svg>
       </div>
     );
