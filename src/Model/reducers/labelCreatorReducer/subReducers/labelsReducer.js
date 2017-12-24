@@ -1,4 +1,4 @@
-import { labelTool } from "Model/store/initialState";
+import { labels } from "Model/store/initialState";
 import {
   ADD_LABEL,
   MODIFY_LABEL,
@@ -6,7 +6,7 @@ import {
   SET_ACTIVE_LABEL_ID
 } from "Model/actions/actionTypes";
 
-export default (state = labelTool, action) => {
+export default (state = labels, action) => {
   switch (action.type) {
     case ADD_LABEL:
       // deconstruction

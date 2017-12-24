@@ -1,37 +1,14 @@
-// myModelsReducer
 export const myModels = {
   models: []
 };
 
-// modelCreatorProgressReducer
 export const labelCreatorProgress = {
   step: 0,
   prevButtonDisabled: true,
   nextButtonDisabled: false
 };
 
-// modelCreatorLabelToolReducer
-export const labelTool = {
-  labelTypes: [
-    {
-      id: 1,
-      name: "Human",
-      shape: "Rectangle",
-      color: "red"
-    },
-    {
-      id: 2,
-      name: "Raccoon",
-      shape: "Circle",
-      color: "blue"
-    },
-    {
-      id: 3,
-      name: "Dog",
-      shape: "Rectangle",
-      color: "green"
-    }
-  ],
+export const labels = {
   labels: [
     {
       id: 1,
@@ -54,11 +31,36 @@ export const labelTool = {
     }
   ],
   activeLabelId: 1,
-  activeLabelTypeId: 1,
   nextLabelId: 3
 };
 
-// fileUploaderReducer
+export const labelTypes = {
+  labelTypes: [
+    {
+      id: 1,
+      name: "Human",
+      shape: "Rectangle",
+      color: "red"
+    },
+    {
+      id: 2,
+      name: "Raccoon",
+      shape: "Circle",
+      color: "blue"
+    },
+    {
+      id: 3,
+      name: "Dog",
+      shape: "Rectangle",
+      color: "green"
+    }
+  ],
+  activeLabelTypeId: 1
+  // step: 0,
+  // prevButtonDisabled: true,
+  // nextButtonDisabled: false
+};
+
 export const fileUploader = {
   files: []
 };

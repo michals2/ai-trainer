@@ -13,12 +13,14 @@ import {
 import LabelTool from "Components/LabelTool";
 
 function mapStateToProps(state) {
-  const labelCreator = state.labelCreator;
+  // const labels = state.labels;
+  // const labelTypes = state.labelTypes;
+  const { labels, labelTypes, fileUploader } = state.labelCreator;
   return {
-    files: labelCreator.fileUploader.files,
-    labels: labelCreator.labelTool.labels,
-    labelTypes: labelCreator.labelTool.labelTypes,
-    activeLabelTypeId: labelCreator.labelTool.activeLabelTypeId
+    files: fileUploader.files,
+    labels: labels.labels,
+    labelTypes: labelTypes.labelTypes,
+    activeLabelTypeId: labelTypes.activeLabelTypeId
   };
 }
 
