@@ -2,7 +2,12 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 // Model imports
-import { addLabel, deleteLabel, setLabelType } from "Model/actions/actions";
+import {
+  addLabel,
+  deleteLabel,
+  setActiveLabelId,
+  modifyLabel
+} from "Model/actions/actions";
 
 // View imports
 import LabelTool from "Components/LabelTool";
@@ -11,14 +16,14 @@ function mapStateToProps(state) {
   const modelCreator = state.modelCreator;
   return {
     files: modelCreator.fileUploader.files,
-    activeLabelType: modelCreator.labelTool.activeLabelType
+    labels: modelCreator.labelTool.labels
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { addLabel, deleteLabel, setLabelType },
+      { addLabel, deleteLabel, setActiveLabelId, modifyLabel },
       dispatch
     )
   };

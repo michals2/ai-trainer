@@ -7,14 +7,17 @@ export function decrementStep() {
   return { type: types.DECREMENT_STEP };
 }
 
-export function addLabel(shape, dimensions, file) {
-  return { type: types.ADD_LABEL, shape, dimensions, file };
+export function addLabel(dims) {
+  return { type: types.ADD_LABEL, dims };
 }
-export function deleteLabel(file, labelID) {
-  return { type: types.DELETE_LABEL, file, labelID };
+export function modifyLabel(key, dims) {
+  return { type: types.MODIFY_LABEL, key, dims };
 }
-export function setLabelType(labelType) {
-  return { type: types.SET_LABEL_TYPE, labelType };
+export function deleteLabel(key) {
+  return { type: types.DELETE_LABEL, key };
+}
+export function setActiveLabelId(labelType) {
+  return { type: types.SET_ACTIVE_LABEL_ID, labelType };
 }
 
 export function addFile(url, fileName, dims) {

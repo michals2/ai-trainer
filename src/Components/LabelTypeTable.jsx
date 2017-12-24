@@ -27,7 +27,7 @@ const columns = [
   }
 ];
 
-const LabelTable = props => {
+const LabelTypeTable = props => {
   return (
     <div>
       <Table dataSource={dataSource} columns={columns} pagination={false} />
@@ -35,4 +35,4 @@ const LabelTable = props => {
   );
 };
 
-export default LabelTable;
+export default LabelTypeTable;

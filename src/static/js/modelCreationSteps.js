@@ -1,6 +1,6 @@
 // import ModelExplorer from "Components/ModelExplorer";
 import FileUploaderContainer from "Containers/FileUploaderContainer";
-import LabelSpecifier from "Components/LabelSpecifier";
+import LabelTypeCreator from "Components/LabelTypeCreator";
 import LabelToolContainer from "Containers/LabelToolContainer";
 // import SplitDataset from "Components/SplitDataset";
 // import TrainModel from "Components/TrainModel";
@@ -23,7 +23,7 @@ export const modelCreationStepNames = [
 export const modelCreationSteps = [
   // new Step("Choose Model Type", 0, ModelExplorer),
   new Step("Upload Files", 0, FileUploaderContainer),
-  new Step("Create Labels", 1, LabelSpecifier),
+  new Step("Create Labels", 1, LabelTypeCreator),
   new Step("Label Dataset", 2, LabelToolContainer)
   // new Step("Split Dataset", 4, SplitDataset),
   // new Step("Train Model", 5, TrainModel)

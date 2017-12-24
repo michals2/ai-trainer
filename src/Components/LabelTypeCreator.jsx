@@ -2,7 +2,7 @@
 import React from "react";
 import { Form, Input, Row, Col, Select, Button } from "antd";
 
-import LabelTable from "Components/LabelTable";
+import LabelTypeTable from "Components/LabelTypeTable";
 
 const Option = Select.Option;
 const FormItem = Form.Item;
@@ -24,7 +24,7 @@ const handleSubmit = e => {
 
 const labelShapeOptions = ["Point", "Rectangle", "Circle", "Polygon"];
 
-const LabelSpecifier = () => {
+const LabelTypeCreator = () => {
   return (
     <div>
       <Row type="flex" justify="space-between" span={24}>
@@ -57,11 +57,11 @@ const LabelSpecifier = () => {
           </Form>
         </Col>
         <Col>
-          <LabelTable />
+          <LabelTypeTable />
         </Col>
       </Row>
     </div>
   );
 };
 
-export default LabelSpecifier;
+export default LabelTypeCreator;
