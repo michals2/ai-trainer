@@ -1,10 +1,12 @@
 import React from "react";
 
-export const returnLabelJSX = label => {
+export const returnLabelJSX = (label, shape) => {
+  console.log({ label, shape });
   const { id } = label;
-  switch (label.labelTypeId) {
-    case 1:
-      let { x, y, height, width } = label;
+  // console.log({ shape });
+  switch (shape) {
+    case "Rectangle":
+      let { x, y, height, width } = label.dims;
       return (
         <rect
           key={id}
@@ -15,8 +17,8 @@ export const returnLabelJSX = label => {
           style={{ fill: "none", stroke: "red", strokeWidth: 2 }}
         />
       );
-    case 2:
-      let { cx, cy, r } = label;
+    case "Circle":
+      let { cx, cy, r } = label.dims;
       return (
         <circle
           key={id}
