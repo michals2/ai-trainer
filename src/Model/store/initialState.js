@@ -36,21 +36,25 @@ export const labelTool = {
     {
       id: 1,
       labelTypeId: 2,
-      cx: "100",
-      cy: "200",
-      r: "25"
+      dims: {
+        cx: 100,
+        cy: 200,
+        r: 25
+      }
     },
     {
       id: 2,
       labelTypeId: 1,
-      x: "300",
-      y: "200",
-      height: "200",
-      width: "33"
+      dims: {
+        x: 300,
+        y: 200,
+        height: 200,
+        width: 33
+      }
     }
   ],
-  activeLabelId: null,
-  activeLabelTypeId: 0,
+  activeLabelId: 1,
+  activeLabelTypeId: 1,
   nextLabelId: 3
 };
 
