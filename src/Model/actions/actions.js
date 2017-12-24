@@ -16,14 +16,17 @@ export function modifyLabel(key, dims) {
 export function deleteLabel(key) {
   return { type: types.DELETE_LABEL, key };
 }
-
 export function setActiveLabelId(labelType) {
   return { type: types.SET_ACTIVE_LABEL_ID, labelType };
 }
+
 export function addLabelType(labelType) {
   return { type: types.ADD_LABEL_TYPE, labelType };
 }
 export function deleteLabelType(labelTypeID) {
+  return { type: types.DELETE_LABEL_TYPE, labelTypeID };
+}
+export function setActiveLabelTypeId(labelTypeID) {
   return { type: types.DELETE_LABEL_TYPE, labelTypeID };
 }
 
