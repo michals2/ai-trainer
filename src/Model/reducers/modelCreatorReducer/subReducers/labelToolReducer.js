@@ -16,7 +16,7 @@ export default (state = labelTool, action) => {
 
       // new label
       const newLabel = {
-        ...dims,
+        dims,
         labelTypeId: activeLabelTypeId,
         id: nextLabelId,
         labelType: activeLabelType
