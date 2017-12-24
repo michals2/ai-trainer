@@ -16,7 +16,9 @@ function mapStateToProps(state) {
   const modelCreator = state.modelCreator;
   return {
     files: modelCreator.fileUploader.files,
-    labels: modelCreator.labelTool.labels
+    labels: modelCreator.labelTool.labels,
+    labelTypes: modelCreator.labelTool.labelTypes,
+    activeLabelTypeId: modelCreator.labelTool.activeLabelTypeId
   };
 }
 
