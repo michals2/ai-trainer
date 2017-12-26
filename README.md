@@ -47,7 +47,16 @@ Image labeling tool for for creating object detection models
       * prevButtonDisabled: bool
       * nextButtonDisabled: bool
     * fileUploader
-      * files: []
+      * files: [
+        {
+          fileName: "",
+          url: "",
+          dims: {
+            height: #,
+            width: #
+          }
+        }
+      ]
     * labels
       * labels: [
         {
