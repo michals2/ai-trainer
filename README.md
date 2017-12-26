@@ -13,9 +13,9 @@ Image labeling tool for for creating object detection models
           * AppHeaderContainer
             * AppHeader
           * Home
-        * ModelCreator
-          * ModelCreatorProgressContainer
-            * ModelCreatorProgress
+        * LabelCreator
+          * LabelCreatorProgressContainer
+            * LabelCreatorProgress
           * Switch
             * ModelExplorer
             * FileUploaderContainer
