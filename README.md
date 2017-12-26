@@ -7,21 +7,21 @@ Image labeling tool for for creating object detection models
 
 * LocaleProvider
   * Provider
-    * ConnectedRouter **(TF-6)**
+    * ConnectedRouter
       * App
         * Switch
-          * AppHeaderContainer **(TF-1)**
+          * AppHeaderContainer
             * AppHeader
           * Home
         * ModelCreator
-          * ModelCreatorProgressContainer **(TF-2)**
+          * ModelCreatorProgressContainer
             * ModelCreatorProgress
           * Switch
             * ModelExplorer
-            * FileUploaderContainer **(TF-3)**
+            * FileUploaderContainer
               * FileUploader
             * LabelSpecifier
-            * LabelToolContainer **(TF-4)**
+            * LabelToolContainer
               * LabelTool
                 * LabelToolNavBar
                 * LabelSVG
@@ -32,28 +32,31 @@ Image labeling tool for for creating object detection models
 
 * RootReducer
   * modelCreatorReducer
-    * modelCreatorProgressReducer **(TF-2)**
-    * fileUploaderReducer **(TF-3)**
-    * labelToolReducer **(TF-4)**
-  * myModelsReducer **(TF-5)**
-  * routerReducer **(TF-6)**
+    * modelCreatorProgressReducer
+    * fileUploaderReducer
+    * labelToolReducer
+  * myModelsReducer
+  * routerReducer
 
 #### State Architecture
 
 * State
-  * modelCreator
-    * modelCreatorProgress **(TF-1) (TF-2)**
+  * labelCreator
+    * labelCreatorProgress
       * step: #
       * prevButtonDisabled: bool
       * nextButtonDisabled: bool
-    * fileUploader **(TF-3)**
+    * fileUploader
       * files: []
-    * labelTool **(TF-4)**
+    * labels
       * labels: []
-      * activeLabelType: #
-  * myModels **(TF-5)**
-    * models: []
-  * router **(TF-6)**
+      * activeLabelId: #
+      * nextAvailableLabelId: #
+    * labelTypes
+      * labelTypes: []
+      * activeLabelTypeId: #
+      * nextAvailableLabelTypeId: #
+  * router
     * location
       * pathname: ""
       * search: ""
