@@ -18,10 +18,12 @@ const labelShapeOptions = ["Point", "Rectangle", "Circle", "Polygon"];
 class LabelTypeCreatorForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
-    // const values = e.target;
-    // console.log({ values });
     this.props.form.validateFields((err, vals) => {
-      if (!err) console.log({ vals });
+      if (!err) {
+        console.log({ vals });
+        const { name, shape, color } = vals;
+        this.props.actions.addLabelType(name, shape, color);
+      }
     });
   };
 
@@ -30,7 +32,7 @@ class LabelTypeCreatorForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <FormItem {...formItemLayout} label="Label Name" hasFeedback>
-          {getFieldDecorator("labelName", {
+          {getFieldDecorator("name", {
             rules: [
               {
                 required: true,
@@ -41,7 +43,7 @@ class LabelTypeCreatorForm extends Component {
         </FormItem>
 
         <FormItem {...formItemLayout} label="Label Shape" hasFeedback>
-          {getFieldDecorator("labelShape", {
+          {getFieldDecorator("shape", {
             rules: [
               {
                 required: true,
@@ -59,8 +61,8 @@ class LabelTypeCreatorForm extends Component {
           )}
         </FormItem>
 
-        <FormItem {...formItemLayout} label="Label Shortcut" hasFeedback>
-          {getFieldDecorator("labelShortcut", {
+        <FormItem {...formItemLayout} label="Label Color" hasFeedback>
+          {getFieldDecorator("color", {
             rules: []
           })(<Input />)}
         </FormItem>

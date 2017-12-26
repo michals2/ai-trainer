@@ -20,14 +20,14 @@ export function setActiveLabelId(labelType) {
   return { type: types.SET_ACTIVE_LABEL_ID, labelType };
 }
 
-export function addLabelType(labelType) {
-  return { type: types.ADD_LABEL_TYPE, labelType };
+export function addLabelType(name, shape, color) {
+  return { type: types.ADD_LABEL_TYPE, name, shape, color };
 }
-export function deleteLabelType(labelTypeID) {
-  return { type: types.DELETE_LABEL_TYPE, labelTypeID };
+export function deleteLabelType(id) {
+  return { type: types.DELETE_LABEL_TYPE, id };
 }
-export function setActiveLabelTypeId(labelTypeID) {
-  return { type: types.DELETE_LABEL_TYPE, labelTypeID };
+export function setActiveLabelTypeId(id) {
+  return { type: types.DELETE_LABEL_TYPE, id };
 }
 
 export function addFile(url, fileName, dims) {

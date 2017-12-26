@@ -13,6 +13,7 @@ export default (state = labelTypes, action) => {
     case ADD_LABEL_TYPE:
       const { name, shape, color } = action;
       const { nextAvailableLabelTypeId } = state;
+      console.log({ nextAvailableLabelTypeId });
       const newLabelType = {
         id: nextAvailableLabelTypeId,
         name,

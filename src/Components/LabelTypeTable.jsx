@@ -1,33 +1,30 @@
 import React from "react";
 import { Table } from "antd";
 
-const dataSource = [
-  {
-    key: "1",
-    Name: "Human",
-    Shape: "Rectangle"
-  },
-  {
-    key: "2",
-    Name: "Dog",
-    Shape: "Circle"
-  }
-];
-
 const columns = [
   {
     title: "Name",
-    dataIndex: "Name",
-    key: "Name"
+    dataIndex: "name",
+    key: "name"
   },
   {
     title: "Shape",
-    dataIndex: "Shape",
-    key: "Shape"
+    dataIndex: "shape",
+    key: "shape"
+  },
+  {
+    title: "Color",
+    dataIndex: "color",
+    key: "color"
   }
 ];
 
 const LabelTypeTable = props => {
+  console.log({ props });
+  const dataSource = props.state.labelTypes.map(type => ({
+    ...type,
+    key: type.id
+  }));
   return (
     <div>
       <Table dataSource={dataSource} columns={columns} pagination={false} />

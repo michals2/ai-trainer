@@ -36,27 +36,27 @@ export const labels = {
 
 export const labelTypes = {
   labelTypes: [
-    {
-      id: 1,
-      name: "Human",
-      shape: "Rectangle",
-      color: "red"
-    },
-    {
-      id: 2,
-      name: "Raccoon",
-      shape: "Circle",
-      color: "blue"
-    },
-    {
-      id: 3,
-      name: "Dog",
-      shape: "Rectangle",
-      color: "green"
-    }
+    // {
+    //   id: 1,
+    //   name: "Human",
+    //   shape: "Rectangle",
+    //   color: "red"
+    // },
+    // {
+    //   id: 2,
+    //   name: "Raccoon",
+    //   shape: "Circle",
+    //   color: "blue"
+    // },
+    // {
+    //   id: 3,
+    //   name: "Dog",
+    //   shape: "Rectangle",
+    //   color: "green"
+    // }
   ],
   activeLabelTypeId: 1,
-  nextAvailabelLabelTypeId: 4
+  nextAvailableLabelTypeId: 4
 };
 
 export const fileUploader = {

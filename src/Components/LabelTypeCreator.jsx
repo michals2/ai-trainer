@@ -1,6 +1,5 @@
 // React imports
 import React from "react";
-import { Row, Col } from "antd";
 
 import LabelTypeTable from "Components/LabelTypeTable";
 import LabelTypeCreatorForm from "Components/LabelTypeCreatorForm";
@@ -13,14 +12,14 @@ const itemStyle = {
   paddingRight: 40
 };
 
-const LabelTypeCreator = () => {
+const LabelTypeCreator = props => {
   return (
     <div style={containerStyle}>
       <div style={itemStyle}>
-        <LabelTypeCreatorForm />
+        <LabelTypeCreatorForm {...props} />
       </div>
       <div style={itemStyle}>
-        <LabelTypeTable />
+        <LabelTypeTable {...props} />
       </div>
     </div>
   );
