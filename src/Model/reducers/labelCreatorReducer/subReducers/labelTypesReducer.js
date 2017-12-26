@@ -24,7 +24,6 @@ export default (state = labelTypes, action) => {
         labelTypes: [...state.labelTypes, newLabelType],
         nextAvailableLabelTypeId: nextAvailableLabelTypeId + 1
       };
-      break;
 
     case DELETE_LABEL_TYPE:
       console.log("deleting");

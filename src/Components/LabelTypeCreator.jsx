@@ -1,65 +1,27 @@
 // React imports
 import React from "react";
-import { Form, Input, Row, Col, Select, Button } from "antd";
+import { Row, Col } from "antd";
 
 import LabelTypeTable from "Components/LabelTypeTable";
+import LabelTypeCreatorForm from "Components/LabelTypeCreatorForm";
 
-const Option = Select.Option;
-const FormItem = Form.Item;
-const formItemLayout = {
-  labelCol: {
-    xs: { span: 24 },
-    sm: { span: 8 }
-  },
-  wrapperCol: {
-    xs: { span: 24 },
-    sm: { span: 16 }
-  }
+const containerStyle = {
+  display: "flex"
 };
-
-const handleSubmit = e => {
-  e.preventDefault();
-  console.log({ e });
+const itemStyle = {
+  paddingLeft: 40,
+  paddingRight: 40
 };
-
-const labelShapeOptions = ["Point", "Rectangle", "Circle", "Polygon"];
 
 const LabelTypeCreator = () => {
   return (
-    <div>
-      <Row type="flex" justify="space-between" span={24}>
-        <Col>
-          <Form onSubmit={handleSubmit}>
-            <FormItem {...formItemLayout} label="Label Name" required>
-              <Input />
-            </FormItem>
-            <FormItem {...formItemLayout} label="Label Shape" required>
-              <Select>
-                {labelShapeOptions.map((labelShapeOption, i) =>
-                  <Option value={labelShapeOption} key={i}>
-                    {labelShapeOption}
-                  </Option>
-                )}
-              </Select>
-            </FormItem>
-            <FormItem {...formItemLayout} label="Shortcut">
-              <Input />
-            </FormItem>
-            <FormItem>
-              <Button
-                type="primary"
-                htmlType="submit"
-                // disabled={hasErrors(getFieldsError())}
-              >
-                Add Label
-              </Button>
-            </FormItem>
-          </Form>
-        </Col>
-        <Col>
-          <LabelTypeTable />
-        </Col>
-      </Row>
+    <div style={containerStyle}>
+      <div style={itemStyle}>
+        <LabelTypeCreatorForm />
+      </div>
+      <div style={itemStyle}>
+        <LabelTypeTable />
+      </div>
     </div>
   );
 };
