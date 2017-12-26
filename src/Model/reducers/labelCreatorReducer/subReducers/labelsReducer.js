@@ -41,11 +41,14 @@ export default (state = labels, action) => {
           labels.map(label => {
             if (label.get("id") === activeLabelId) {
               return label.updateIn(["dims"], dims => {
+                const dimX = dims.get("x");
+                const dimY = dims.get("y");
+
                 return dims
-                  .set("x", Math.min(dims.get("x"), pos.x))
-                  .set("width", Math.max(dims.get("x"), pos.x))
-                  .set("y", Math.min(dims.get("y"), pos.y))
-                  .set("height", Math.max(dims.get("y"), pos.y));
+                  .set("width", Math.abs(pos.x - dimX))
+                  .set("height", Math.abs(pos.y - dimY))
+                // .set("x", Math.min(dims.get("x"), pos.x))
+                // .set("y", Math.min(dims.get("y"), pos.y))
               });
             } else {
               return label;
