@@ -11,7 +11,19 @@ export default (state = labelTypes, action) => {
       return { ...state, activeLabelType: action.labelType };
 
     case ADD_LABEL_TYPE:
-      console.log("adding");
+      const { name, shape, color } = action;
+      const { nextAvailableLabelTypeId } = state;
+      const newLabelType = {
+        id: nextAvailableLabelTypeId,
+        name,
+        shape,
+        color
+      };
+      return {
+        ...state,
+        labelTypes: [...state.labelTypes, newLabelType],
+        nextAvailableLabelTypeId: nextAvailableLabelTypeId + 1
+      };
       break;
 
     case DELETE_LABEL_TYPE:
