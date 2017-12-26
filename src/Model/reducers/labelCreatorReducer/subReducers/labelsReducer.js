@@ -35,7 +35,7 @@ export default (state = labels, action) => {
       console.log({ action });
       break;
     case SET_ACTIVE_LABEL_ID:
-      return { ...state, activeLabelType: action.labelType };
+      return { ...state, activeLabelType: action.id };
 
     default:
       return state;

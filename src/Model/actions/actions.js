@@ -27,7 +27,7 @@ export function deleteLabelType(id) {
   return { type: types.DELETE_LABEL_TYPE, id };
 }
 export function setActiveLabelTypeId(id) {
-  return { type: types.DELETE_LABEL_TYPE, id };
+  return { type: types.SET_ACTIVE_LABEL_TYPE_ID, id };
 }
 
 export function addFile(url, fileName, dims) {

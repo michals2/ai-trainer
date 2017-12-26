@@ -1,3 +1,5 @@
+import stockImage from "static/images/raccoon-1.jpg";
+
 export const myModels = {
   models: []
 };
@@ -36,29 +38,38 @@ export const labels = {
 
 export const labelTypes = {
   labelTypes: [
-    // {
-    //   id: 1,
-    //   name: "Human",
-    //   shape: "Rectangle",
-    //   color: "red"
-    // },
-    // {
-    //   id: 2,
-    //   name: "Raccoon",
-    //   shape: "Circle",
-    //   color: "blue"
-    // },
-    // {
-    //   id: 3,
-    //   name: "Dog",
-    //   shape: "Rectangle",
-    //   color: "green"
-    // }
+    {
+      id: 1,
+      name: "Human",
+      shape: "Rectangle",
+      color: "red"
+    },
+    {
+      id: 2,
+      name: "Raccoon",
+      shape: "Circle",
+      color: "blue"
+    },
+    {
+      id: 3,
+      name: "Dog",
+      shape: "Rectangle",
+      color: "green"
+    }
   ],
   activeLabelTypeId: 1,
   nextAvailableLabelTypeId: 4
 };
 
 export const fileUploader = {
-  files: []
+  files: [
+    {
+      fileName: "raccoon stock image",
+      url: stockImage,
+      dims: {
+        width: "650",
+        height: "417"
+      }
+    }
+  ]
 };

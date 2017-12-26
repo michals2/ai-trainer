@@ -8,7 +8,8 @@ import {
 export default (state = labelTypes, action) => {
   switch (action.type) {
     case SET_ACTIVE_LABEL_TYPE_ID:
-      return { ...state, activeLabelType: action.labelType };
+      console.log({ action });
+      return { ...state, activeLabelTypeId: action.id };
 
     case ADD_LABEL_TYPE:
       const { name, shape, color } = action;

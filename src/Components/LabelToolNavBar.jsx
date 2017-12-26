@@ -5,16 +5,21 @@ const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
 const LabelToolNavBar = props => {
+  const handleChange = e => {
+    props.actions.setActiveLabelTypeId(e.target.value);
+  };
+
   return (
     <div>
       <RadioGroup
-        value={`${props.activeLabelType}`}
-        onChange={e => props.actions.setLabelType(e.target.value)}
+        value={props.state.labelTypes.activeLabelTypeId}
+        onChange={handleChange}
       >
-        <RadioButton value="0">Raccoon</RadioButton>
-        <RadioButton value="1">Human</RadioButton>
-        <RadioButton value="2">Squirrel</RadioButton>
-        <RadioButton value="3">Dog</RadioButton>
+        {props.state.labelTypes.labelTypes.map(labelType =>
+          <RadioButton value={labelType.id} key={labelType.id}>
+            {labelType.name}
+          </RadioButton>
+        )}
       </RadioGroup>
     </div>
   );
