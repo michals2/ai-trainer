@@ -49,11 +49,26 @@ Image labeling tool for for creating object detection models
     * fileUploader
       * files: []
     * labels
-      * labels: []
+      * labels: [
+        {
+          id: #,
+          labelTypeId: #,
+          dims: {
+            varies depending on labelType
+          }
+        }
+      ]
       * activeLabelId: #
       * nextAvailableLabelId: #
     * labelTypes
-      * labelTypes: []
+      * labelTypes: [
+        {
+          id: #,
+          name: "",
+          shape: "",
+          color: "",
+        }
+      ]
       * activeLabelTypeId: #
       * nextAvailableLabelTypeId: #
   * router
