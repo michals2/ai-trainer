@@ -31,7 +31,7 @@ export const labels = {
     }
   ],
   activeLabelId: 1,
-  nextLabelId: 3
+  nextAvailabelLabelId: 3
 };
 
 export const labelTypes = {
@@ -55,10 +55,8 @@ export const labelTypes = {
       color: "green"
     }
   ],
-  activeLabelTypeId: 1
-  // step: 0,
-  // prevButtonDisabled: true,
-  // nextButtonDisabled: false
+  activeLabelTypeId: 1,
+  nextAvailabelLabelTypeId: 4
 };
 
 export const fileUploader = {
