@@ -7,33 +7,46 @@ import {
 } from "Model/actions/actionTypes";
 
 export default (state = labels, action) => {
+  // deconstruction
+  const currLabels = state.labels;
+  const { nextAvailabelLabelId, activeLabelId } = state;
+  const { dims, activeLabelTypeId } = action;
+  const activeLabel = currLabels.find(label => label.id === activeLabelId);
+
+  // const activeLabelIdex = currLabels.
+
+  let newLabel;
+
   switch (action.type) {
     case ADD_LABEL:
-      // deconstruction
-      const currLabels = state.labels;
-      const { nextLabelId, activeLabelTypeId, activeLabelType } = state;
-      const { dims } = action;
-
       // new label
-      const newLabel = {
+      newLabel = {
         dims,
         labelTypeId: activeLabelTypeId,
-        id: nextLabelId,
-        labelType: activeLabelType
+        id: nextAvailabelLabelId
       };
 
       // new state
       return {
         ...state,
         labels: [...currLabels, newLabel],
-        nextLabelId: nextLabelId + 1
+        activeLabelId: nextAvailabelLabelId,
+        nextAvailabelLabelId: nextAvailabelLabelId + 1
       };
+
     case MODIFY_LABEL:
-      console.log({ action });
-      break;
+      newLabel = {
+        ...activeLabel,
+        dims: { ...activeLabel.dims, ...dims }
+      };
+      return {
+        ...state
+      };
+
     case DELETE_LABEL:
       console.log({ action });
       break;
+
     case SET_ACTIVE_LABEL_ID:
       return { ...state, activeLabelType: action.id };
 
