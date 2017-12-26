@@ -6,14 +6,18 @@ const LabelSVG = props => {
     const dims = e.target.getBoundingClientRect();
     const x = e.clientX - dims.left;
     const y = e.clientY - dims.top;
-    props.actions.addLabel({ x, y }, props.state.labelTypes.activeLabelTypeId);
+    props.actions.addLabel(
+      { x, y, height: 0, width: 0 },
+      props.state.labelTypes.activeLabelTypeId
+    );
   };
 
   const handleMouseMove = e => {
+    if (!props.state.labels.activelyModifyingLabel) return;
     const dims = e.target.getBoundingClientRect();
     const x = e.clientX - dims.left;
     const y = e.clientY - dims.top;
-    // props.actions.modifyLabel({})
+    props.actions.modifyNewLabel({ x, y });
   };
 
   const currImage = props.state.fileUploader.files[0];

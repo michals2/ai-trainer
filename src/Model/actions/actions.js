@@ -10,8 +10,8 @@ export function decrementStep() {
 export function addLabel(dims, activeLabelTypeId) {
   return { type: types.ADD_LABEL, dims, activeLabelTypeId };
 }
-export function modifyLabel(dims) {
-  return { type: types.MODIFY_LABEL, dims };
+export function modifyNewLabel(pos) {
+  return { type: types.MODIFY_NEW_LABEL, pos };
 }
 export function deleteLabel(key) {
   return { type: types.DELETE_LABEL, key };

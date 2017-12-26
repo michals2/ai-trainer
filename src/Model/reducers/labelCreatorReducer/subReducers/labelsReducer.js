@@ -1,21 +1,21 @@
 import { labels } from "Model/store/initialState";
 import {
   ADD_LABEL,
-  MODIFY_LABEL,
+  MODIFY_NEW_LABEL,
   DELETE_LABEL,
   SET_ACTIVE_LABEL_ID
 } from "Model/actions/actionTypes";
+import { fromJS } from "immutable";
 
 export default (state = labels, action) => {
-  // deconstruction
-  const currLabels = state.labels;
-  const { nextAvailabelLabelId, activeLabelId } = state;
-  const { dims, activeLabelTypeId } = action;
-  const activeLabel = currLabels.find(label => label.id === activeLabelId);
+  const imState = fromJS(state);
 
-  // const activeLabelIdex = currLabels.
+  // deconstruction
+  const { nextAvailabelLabelId, activeLabelId } = state;
+  const { dims, activeLabelTypeId, pos } = action;
 
   let newLabel;
+  let newState;
 
   switch (action.type) {
     case ADD_LABEL:
@@ -26,22 +26,37 @@ export default (state = labels, action) => {
         id: nextAvailabelLabelId
       };
 
-      // new state
-      return {
-        ...state,
-        labels: [...currLabels, newLabel],
-        activeLabelId: nextAvailabelLabelId,
-        nextAvailabelLabelId: nextAvailabelLabelId + 1
-      };
+      newState = imState
+        .set("activeLabelId", nextAvailabelLabelId)
+        .set("nextAvailabelLabelId", nextAvailabelLabelId + 1)
+        .set("activelyModifyingLabel", true)
+        .updateIn(["labels"], list => list.push(newLabel))
+        .toJS();
 
-    case MODIFY_LABEL:
-      newLabel = {
-        ...activeLabel,
-        dims: { ...activeLabel.dims, ...dims }
-      };
-      return {
-        ...state
-      };
+      return newState;
+
+    case MODIFY_NEW_LABEL:
+      newState = imState
+        .updateIn(["labels"], labels =>
+          labels.map(label => {
+            if (label.get("id") === activeLabelId) {
+              return label.updateIn(["dims"], dims => {
+                return dims
+                  .set("x", Math.min(dims.get("x"), pos.x))
+                  .set("width", Math.max(dims.get("x"), pos.x))
+                  .set("y", Math.min(dims.get("y"), pos.y))
+                  .set("height", Math.max(dims.get("y"), pos.y));
+              });
+            } else {
+              return label;
+            }
+          })
+        )
+        .toJS();
+
+      console.log({ newState });
+
+      return newState;
 
     case DELETE_LABEL:
       console.log({ action });

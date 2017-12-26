@@ -33,7 +33,8 @@ export const labels = {
     }
   ],
   activeLabelId: 1,
-  nextAvailabelLabelId: 3
+  nextAvailabelLabelId: 3,
+  activelyModifyingLabel: false
 };
 
 export const labelTypes = {

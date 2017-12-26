@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import {
   addLabel,
   deleteLabel,
-  modifyLabel,
+  modifyNewLabel,
   setActiveLabelTypeId
 } from "Model/actions/actions";
 
@@ -21,7 +21,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { addLabel, deleteLabel, modifyLabel, setActiveLabelTypeId },
+      { addLabel, deleteLabel, modifyNewLabel, setActiveLabelTypeId },
       dispatch
     )
   };
